@@ -1,6 +1,13 @@
+module.exports = function towelSort(matrix) {
+    let sorted = [];
 
-// You should implement your task here.
+    for (let key in matrix) {
+        if (key % 2 !== 0) {
+            matrix[key].sort((a, b) => b - a);
+        }
+        matrix.sort((a, b) => a - b);
+        sorted = sorted.concat(matrix[key]);
+    }
 
-module.exports = function towelSort (matrix) {
-  return [];
+    return sorted;
 }
